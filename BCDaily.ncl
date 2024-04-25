@@ -3,10 +3,11 @@ load "BCFuncs.ncl"
 load "get1Dindex2.ncl"
 
 begin
-AVG_YRS = pad*2 + 1
+pad = 4		; Defines detrend moving window, change as appropriate for your application
+AVG_YRS = pad*2 + 1	; Number of years for moving average in BC detrend step
 idum = 123
 fill = 1.0e20
-buff = 15
+buff = 15	; Number of days +/- for CDF creation moving window
 
 err = NhlGetErrorObjectId()
 setvalues err
@@ -33,6 +34,7 @@ else
 	nfiles = nfiles21c
 end if
 
+; dec is the index of the file being adjusted in filesgcm
 if (dec.lt.nfiles_hist) then
 	fname = str_sub_str(filesgcm(dec),dhist,dhistout)
 else
