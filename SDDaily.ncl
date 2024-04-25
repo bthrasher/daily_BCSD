@@ -11,6 +11,7 @@ bcfiles21c = systemfunc("ls "+d21bc+"/*.nc")	; files w/ BC factors
 bcfiles = array_append_record(bcfileshist,bcfiles21c,0)
 nbcfiles = dimsizes(bcfiles)
 bcfilesall = addfiles(bcfiles,"r")
+; dec is the index of the file being processed in bcfiles
 if (dec.lt.dimsizes(bcfileshist)) then
 	fout = str_sub_str(bcfiles(dec),dhistbc,dhistout)
 else
