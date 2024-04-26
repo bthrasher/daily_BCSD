@@ -44,7 +44,6 @@ oclimo = oclimof->$var$(:,{min_lat:max_lat},{min_lon:max_lon})
 opt = True
 opt@critpc = 1
 aggoclimo = area_hi2lores_Wrap(olons,olats,oclimo,True,1,bclons,bclats,opt)
-if (var.eq."pr") then aggoclimo = where((aggoclimo*86400.).lt.0.25,0.,aggoclimo) end if
 
 fmask = addfile(dobs+"/../../elevation_0.25.nc","r")
 obsmask = fmask->elev(0,0,120:,:)
@@ -69,7 +68,6 @@ do y = min(decdates(:,0)),max(decdates(:,0))
 	doy_ii = day_of_year(tcd(:,0),tcd(:,1),tcd(:,2))
 
 	factors = bcfilesall[dec]->$var$(ii,{min_lat:max_lat},{min_lon:max_lon})
-	if (var.eq."pr") then factors = where((factors*86400.).lt.0.25,0.,factors) end if
 	
 	do d = 0,ts-1
 		doy = doy_ii(d) - 1
