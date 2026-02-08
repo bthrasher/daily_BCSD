@@ -6,3 +6,5 @@ This repository contains code for the daily Bias Correction/Spatial Disaggregati
 - NEX-HIDCP-CMIP6: https://data.nas.nasa.gov/nex-hidcp-cmip6
 
 See Thrasher, et al., 2012, (https://doi.org/10.5194/hess-16-3309-2012) and Thrasher, et al., 2022, (https://doi.org/10.1038/s41597-022-01393-4) for more details.
+
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18525436.svg)](https://doi.org/10.5281/zenodo.18525436)
