@@ -231,7 +231,7 @@ do d = 0,ts-1
 	delete(varobs)
 	
 	print("starting lookup")
-	if (var.eq."pr") then
+	if (.not.isStrSubset(var,"tas")) then
 		q = lookup(day_data,sort_hist,quant_hist,1,0,mean_hist,stdev_hist,skew_hist)
 		bc_data = lookup(q,quantobs,sortobs,1,1,meanobs,stdevobs,skewobs)
 		bc_data = where(bc_data.le.0.,0.,bc_data)
